@@ -1,4 +1,4 @@
-package om.pluralsight.blog.models.dto;
+package om.pluralsight.blog.models;
 
 import java.util.Set;
 
@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "author")
-public class AuthorDto {
+public class Author {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -40,6 +40,6 @@ public class AuthorDto {
 	private String contactNumber;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "author")
-	private Set<BlogPostDto> blogs;
+	private Set<Post> blogs;
 
 }

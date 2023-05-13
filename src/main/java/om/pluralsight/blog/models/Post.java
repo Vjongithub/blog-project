@@ -1,4 +1,4 @@
-package om.pluralsight.blog.models.dto;
+package om.pluralsight.blog.models;
 
 import java.sql.Date;
 
@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "blog_post")
-public class BlogPostDto {
+public class Post {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,5 +41,5 @@ public class BlogPostDto {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="id")
-	private AuthorDto author;
+	private Author author;
 }
